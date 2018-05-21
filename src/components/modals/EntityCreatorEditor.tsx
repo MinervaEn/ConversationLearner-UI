@@ -422,6 +422,7 @@ class EntityCreatorEditor extends React.Component<Props, ComponentState> {
                     disabled={this.state.isEditing || this.props.entityTypeFilter != null}
                 />
                 <OF.TextField
+                    data-testid="entity-creator-input-name"
                     onGetErrorMessage={this.onGetNameErrorMessage}
                     onChanged={this.onChangedName}
                     onKeyDown={this.onKeyDownName}
@@ -452,6 +453,7 @@ class EntityCreatorEditor extends React.Component<Props, ComponentState> {
                 </div>
                 <div className="cl-entity-creator-checkbox">
                     <TC.Checkbox
+                        data-testid="entity-creator-input-multivalue"
                         label={intl.formatMessage({
                             id: FM.ENTITYCREATOREDITOR_FIELDS_MULTIVALUE_LABEL,
                             defaultMessage: 'Multi-valued'
@@ -536,6 +538,7 @@ class EntityCreatorEditor extends React.Component<Props, ComponentState> {
                 <div className="cl-modal_footer cl-modal-buttons">
                     <div className="cl-modal-buttons_primary">
                         <OF.PrimaryButton
+                            data-testid="entity-creator-button-save"
                             disabled={(this.onGetNameErrorMessage(this.state.entityNameVal) !== '') && !this.state.isPrebuilt || (this.state.isEditing && !this.state.hasPendingChanges)}
                             onClick={this.onClickSaveCreate}
                             ariaDescription={this.state.isEditing

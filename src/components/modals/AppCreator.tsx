@@ -167,6 +167,7 @@ class AppCreator extends React.Component<Props, ComponentState> {
                 </div>
                 <div>
                     <OF.TextField
+                        data-testid="app-create-input-name"
                         onGetErrorMessage={value => this.onGetNameErrorMessage(value)}
                         onChanged={text => this.nameChanged(text)}
                         label={intl.formatMessage({
@@ -195,6 +196,7 @@ class AppCreator extends React.Component<Props, ComponentState> {
                     <div className="cl-modal-buttons">
                         <div className="cl-modal-buttons_primary">
                             <OF.PrimaryButton
+                                data-testid="app-create-button-submit"
                                 disabled={!this.state.appNameVal}
                                 onClick={this.onClickCreate}
                                 ariaDescription={intl.formatMessage({
